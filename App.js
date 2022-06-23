@@ -1,58 +1,11 @@
 import * as React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-  ScrollView,
-} from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { FlatList } from "react-native-gesture-handler";
-
-function HomeScreen({ navigation }) {
-  const handlePress1 = () => {
-    navigation.navigate("Details1");
-  };
-
-  return (
-    <View style={{ alignItems: "center", justifyContent: "center" }}>
-      <ScrollView>
-        <TouchableOpacity onPress={handlePress1}>
-          <Text style={styles.item}>item1</Text>
-          <Text style={styles.item}>item2</Text>
-          <Text style={styles.item}>item3</Text>
-          <Text style={styles.item}>item4</Text>
-        </TouchableOpacity>
-      </ScrollView>
-    </View>
-  );
-}
-
-function DetailsScreen1() {
-  return (
-    <View style={{ alignItems: "center", justifyContent: "center" }}>
-      <View>
-        <Image
-          style={{ height: 300, width: 300, marginTop: 30 }}
-          source={require("./assets/image-stand-out.jpg")}
-        />
-      </View>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  item: {
-    marginHorizontal: 10,
-    marginTop: 24,
-    padding: 30,
-    backgroundColor: "pink",
-    fontSize: 24,
-    width:300,
-  },
-});
+import HomeScreen from "./HomeScreen";
+import Screenone from "./screens/Screenone";
+import Screentwo from "./screens/ScreenTwo";
+import Screenthree from "./screens/Screenthree";
+import Screenfour from "./screens/Screenfour";
 
 const Stack = createNativeStackNavigator();
 
@@ -61,7 +14,10 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details1" component={DetailsScreen1} />
+        <Stack.Screen name="Details1" component={Screenone} />
+        <Stack.Screen name="Details2" component={Screentwo} />
+        <Stack.Screen name="Details3" component={Screenthree} />
+        <Stack.Screen name="Details4" component={Screenfour} />
       </Stack.Navigator>
     </NavigationContainer>
   );
