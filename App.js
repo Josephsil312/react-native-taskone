@@ -19,6 +19,7 @@ function HomeScreen({ navigation }) {
   return (
     <View style={{ alignItems: "center", justifyContent: "center" }}>
       <ScrollView>
+//     handlePress1 is not a good name.
         <TouchableOpacity onPress={handlePress1}>
           <Text style={styles.item}>item1</Text>
           <Text style={styles.item}>item2</Text>
@@ -34,6 +35,8 @@ function DetailsScreen1() {
   return (
     <View style={{ alignItems: "center", justifyContent: "center" }}>
       <View>
+    // you have to show diifrent image on diffrent item clicked
+    // you have to pass the data from screen 1 to screen two.
         <Image
           style={{ height: 300, width: 300, marginTop: 30 }}
           source={require("./assets/image-stand-out.jpg")}
@@ -55,7 +58,7 @@ const styles = StyleSheet.create({
 });
 
 const Stack = createNativeStackNavigator();
-
+// Move Diffrent componets to diffrent files
 function App() {
   return (
     <NavigationContainer>
