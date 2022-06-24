@@ -22,12 +22,12 @@ export default function Home({ navigation }) {
     {
       title: "Title4",
       rating: 4,
-      key: "3",
+      key: "4",
     },
     {
       title: "Title5",
       rating: 5,
-      key: "3",
+      key: "5",
     },
   ]);
 
